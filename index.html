@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang='en'>
   <head>
-    <title>Searchable Map Template Demo</title>
+    <title>BAOBAB Business Directory Map Demo</title>
     <meta charset='utf-8' />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta content='' name='description' />
@@ -23,7 +23,7 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-          <a class='navbar-brand' href='index.html'>Searchable Map Template</a>
+          <a class='navbar-brand' href='index.html'>BAOBAB Business Directory Map Demo</a>
         </div>
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav navbar-right">
@@ -36,46 +36,49 @@
     <div class='container-fluid'>
       <div class='row'>
         <div class='col-md-4'>
-          <p>This is a demo of <a href='http://derekeder.com'>Derek Eder's</a> <a href='http://derekeder.com/searchable_map_template/'>Searchable Map Template</a> using Google <a href='http://support.google.com/fusiontables/answer/2571232?hl=en&ref_topic=1652595'>Fusion Tables</a>. Use this section to give a little context to your map.</p>
+          <p>This is a searchable map of <a href='http://baobobdirectory.com'>BAOBAB's</a> <a href='http://baobobdirectory.com/Directory'>directory of black owned businesses</a> using Google <a href='http://support.google.com/fusiontables/answer/2571232?hl=en&ref_topic=1652595'>Fusion Tables</a>. </p>
           <div class='well'>
-            <h4>
-              Address <small>(<a id='find_me' href='#'>find me</a>)</small>
-            </h4>
-            <p>
-              <input class='form-control' id='search_address' placeholder='Enter an address or an intersection' type='text' />
-            </p>
-            <p>
-              <label>
-                within
-                <select id='search_radius'>
-                  <option value='400'>2 blocks</option>
-                  <option value='805'>1/2 mile</option>
-                  <option value='1610'>1 mile</option>
-                  <option value='3220'>2 miles</option>
-                </select>
-              </label>
-            </p>
 
             <br />
-            <h4>Custom filters and views</h4>
-            <p>Take a look at the <a href='https://github.com/derekeder/FusionTable-Map-Template/wiki/Filter-examples'>wiki</a> to see how to add your own custom filters and views like:</p>
-            <div class='row'>
-              <div class='col-md-6'>
-                <ul>
-                  <li><a href='https://github.com/derekeder/FusionTable-Map-Template/wiki/Filter-examples#wiki-checkboxes'>Checkboxes</a></li>
-                  <li><a href='https://github.com/derekeder/FusionTable-Map-Template/wiki/Filter-examples#wiki-radiobuttons'>Radio buttons</a></li>
-                  <li><a href='https://github.com/derekeder/FusionTable-Map-Template/wiki/Filter-examples#wiki-drop-down-lists'>Drop down lists</a></li>
-                  <li><a href='https://github.com/derekeder/FusionTable-Map-Template/wiki/Filter-examples#wiki-textsearches'>Text searches</a></li>
-                </ul>
-              </div>
-              <div class='col-md-6'>
-                <ul>
-                  <li><a href='https://github.com/derekeder/FusionTable-Map-Template/wiki/Filter-examples#wiki-sliders'>Sliders</a></li>
-                  <li><a href='https://github.com/derekeder/FusionTable-Map-Template/wiki/Filter-examples#wiki-date-sliders'>Date sliders</a></li>
-                  <li><a href='https://github.com/derekeder/FusionTable-Map-Template/wiki/List-search-results'>Results lists</a></li>
-                </ul>
-              </div>
-            </div>
+            <h4>Filter by business type:</h4>
+            <label>
+              <select id='Category'>
+                <option value=''>Any business type</option>
+                <option value="Building and Design">Building and Design</option>
+                <option value="Arts & Art Gallery">Arts</option>
+                <option value="Beauty & Wellness">Beauty & Wellness</option>
+                <option value="Business and Professional Services">Business and Professional Services</option>
+                <option value="Catering">Catering</option>
+                <option value="Coffee Houses">Coffee Houses</option>
+                <option value="Community Resource and Government">Community Resource and Government</option>
+                <option value="Computer and Technology Services">Computer and Technology Services</option>
+                <option value="Construction">Construction</option>
+                <option value="Dance Studio">Dance Studio</option>
+                <option value="Entertainment">Entertainment</option>
+                <option value="Event Planning">Event Planning</option>
+                <option value="Florist">Florist</option>
+                <option value="Grocery">Grocery</option>
+                <option value="Health and Wellness">Health and Wellness</option>
+                <option value="Information/Media">Information/Media</option>
+                <option value="Jewelry & Accessories">Jewelry & Accessories</option>
+                <option value="Lounge">Lounge</option>
+                <option value="Marketing and Media">Marketing and Media</option>
+                <option value="Massage">Massage</option>
+                <option value="Medical">Medical</option>
+                <option value="Non-profit">Non-Profit</option>
+                <option value="Office Services">Office Services</option>
+                <option value="Real Estate">Real Estate</option>
+                <option value="Restaurant">Restaurant/Cafe</option>
+                <option value="Restaurant/Cafe">Restaurant/Cafe</option>
+                <option value="Retail Store">Retail Store</option>
+                <option value="Tailor/Alteration">Tailor/Alteration</option>
+                <option value="Therapy/Counseling">Therapy/Counseling</option>
+                <option value="Travel & Lodging">Travel & Lodging</option>
+                <option value="Web Design">Web Design</option>
+                <option value="Other Services">Other Services</option>
+              </select>
+            </label>
+
             <br />
             <a class='btn btn-primary' id='search' href='#'>
               <i class='glyphicon glyphicon-search'></i>
@@ -86,6 +89,25 @@
               Reset
             </a>
           </div>
+
+          <h4>
+            Address <small>(<a id='find_me' href='#'>find me</a>)</small>
+          </h4>
+          <p>
+            <input class='form-control' id='search_address' placeholder='Enter an address or an intersection' type='text' />
+          </p>
+          <p>
+            <label>
+              within
+              <select id='search_radius'>
+                <option value='400'>2 blocks</option>
+                <option value='805'>1/2 mile</option>
+                <option value='1610'>1 mile</option>
+                <option value='3220'>2 miles</option>
+              </select>
+            </label>
+          </p>
+
           <div class='alert alert-info' id='result_box' ><strong id='result_count'></strong></div>
         </div>
         <div class='col-md-8'>
@@ -95,6 +117,7 @@
               <p>Please enable JavaScript to view the map.</p>
             </div>
           </noscript>
+
           <div id='map_canvas'></div>
           <p class='pull-right'>
             <a href='http://derekeder.com/searchable_map_template/'>Searchable Map Template</a> by <a href='http://derekeder.com'>Derek Eder</a>.
